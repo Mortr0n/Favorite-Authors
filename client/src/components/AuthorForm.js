@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from '@reach/router';
 
 const AuthorForm = (props) => {
     const { initialAuthor, onSubmitProp, errors } = props;
@@ -26,6 +27,7 @@ const AuthorForm = (props) => {
             </div>
             {/* used margin to keep submit off form input after label changes */}
             <button className='btn btn-primary mt-2' type='submit'>Submit</button>
+            <Link to={`/author`} className="btn btn-info mt-2 ms-2">Cancel</Link>
         </form>
     )
 }

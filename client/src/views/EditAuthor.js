@@ -44,8 +44,9 @@ const EditAuthor = (props) => {
                     <AuthorForm onSubmitProp={updateAuthor} initialAuthor={author} setAuthor={setAuthor} errors={errors}/>
             }
             <div className='mt-2'>
-            <DeleteButton authorId={id} successCallback={navigate('/author')}/> 
-            </div>
+            <DeleteButton authorId={id} successCallback={() =>navigate('/author')}/> 
+            
+            </div> 
             
         </div>
     )

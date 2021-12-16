@@ -15,7 +15,7 @@ const Main = (props) => {
                 setAuthors(res.data);
                 setLoaded(true);
             })
-            .catch((err) => res.status(400).json(err));
+            .catch((err) => console.log(err));
     }, []);
     // remove the deleted author from the front end list
     const removeFromDom = (authorId) => {
