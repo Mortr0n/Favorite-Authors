@@ -10,8 +10,6 @@ const EditAuthor = (props) => {
     const [loaded, setLoaded] = useState(false);
     const [errors, setErrors] = useState([]);
 
-
-
     useEffect(() => {
         axios.get(`http://localhost:8000/api/author/${id}`)
             .then((res) => {
@@ -20,7 +18,7 @@ const EditAuthor = (props) => {
                 setLoaded(true);
             })
             .catch((err) => console.log(err));
-    })
+    }, [])
 
     const updateAuthor = (author) => {
         axios.put(`http://localhost:8000/api/author/${id}`, author)
@@ -36,7 +34,7 @@ const EditAuthor = (props) => {
         });
     }
 
-    return(
+        return(
         <div className='col-3 offset-4'>
             <h1>Edit this Author</h1>
             <p className='text-start'><Link to={'/author'}>Home</Link></p>
@@ -46,7 +44,7 @@ const EditAuthor = (props) => {
                     <AuthorForm onSubmitProp={updateAuthor} initialAuthor={author} setAuthor={setAuthor} errors={errors}/>
             }
             <div className='mt-2'>
-            <DeleteButton authorId={author._id} successCallback={()=>removeFromDom(author._id)}/> 
+            <DeleteButton authorId={id} successCallback={navigate('/author')}/> 
             </div>
             
         </div>

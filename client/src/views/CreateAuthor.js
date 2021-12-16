@@ -17,6 +17,7 @@ const CreateAuthor = (props) => {
                 navigate('/author');
             })
             .catch((err) => {
+                // pushing errors to and array for display on the form
                 console.log(err.response);
                 if(err.response.data.errors) {
                     setErrors(err.response.data.errors);

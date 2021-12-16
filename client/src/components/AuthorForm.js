@@ -24,6 +24,7 @@ const AuthorForm = (props) => {
                 value={author}
                 onChange={(e)=>setAuthor(e.target.value)} />
             </div>
+            {/* used margin to keep submit off form input after label changes */}
             <button className='btn btn-primary mt-2' type='submit'>Submit</button>
         </form>
     )
